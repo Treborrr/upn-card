@@ -1,0 +1,12 @@
+{
+  "name": "upn-card-pwa",
+  "version": "1.0.0",
+  "description": "UPN ID Card PWA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

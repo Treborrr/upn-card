@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fbb728">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ID Card">
+    <meta name="description" content="UPN Student ID Card - Digital Version">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>UPN ID Card</title>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <span class="back-arrow">‹</span>
+            <span class="header-title">ID CARD</span>
+        </div>
+
+        <!-- Card Wrapper -->
+        <div class="card-wrapper">
+            <div class="card">
+                <!-- Avatar (clickable to upload photo) -->
+                <div class="avatar-container" id="avatarContainer">
+                    <input type="file" accept="image/*" id="photoInput" class="photo-input" aria-label="Subir foto">
+                    <div class="avatar-circle" id="avatarCircle">
+                        <!-- Default SVG avatar -->
+                        <svg class="avatar-icon" id="avatarSvg" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="38" r="20" fill="#1a1a1a"/>
+                            <ellipse cx="50" cy="95" rx="35" ry="28" fill="#1a1a1a"/>
+                        </svg>
+                        <!-- User photo (hidden by default) -->
+                        <img class="avatar-photo" id="avatarPhoto" src="" alt="Foto del estudiante">
+                    </div>
+                </div>
+
+                <!-- Active Badge -->
+                <div class="badge-active">
+                    <span class="badge-check">
+                        <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="8" fill="#2D8C4E"/>
+                            <path d="M4.5 8.2L7 10.5L11.5 5.5" stroke="#C8F5D0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                    <span class="badge-text">ACTIVO</span>
+                </div>
+
+                <!-- Name (editable) -->
+                <div class="name-field" contenteditable="true" id="studentName" spellcheck="false">VALERIE NARVA OLAYA</div>
+
+                <!-- Career (editable) -->
+                <div class="career-field" contenteditable="true" id="studentCareer" spellcheck="false">Educación y Gest. del Aprend.</div>
+
+                <!-- Program Type (toggleable) -->
+                <div class="program-type" id="programToggle">
+                    <span class="grad-icon">🎓</span>
+                    <span class="program-text" id="programType">Pregrado</span>
+                </div>
+
+                <!-- Separator -->
+                <div class="separator"></div>
+
+                <!-- Real-time Clock -->
+                <div class="clock" id="realClock">--:--:--</div>
+
+                <!-- Barcode -->
+                <div class="barcode-container">
+                    <canvas id="barcode"></canvas>
+                </div>
+
+                <!-- Date -->
+                <div class="date-field" id="currentDate"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Edit hint toast -->
+    <div class="edit-toast" id="editToast">Toca el nombre o carrera para editar</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
