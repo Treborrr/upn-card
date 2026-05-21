@@ -13,7 +13,7 @@ const STORAGE_KEYS = {
 
 // Default values (match the original image exactly)
 const DEFAULTS = {
-    name: 'VALERIE NARVA OLAYA',
+    name: 'CARLOS MENDOZA SILVA',
     career: 'Educación y Gest. del Aprend.',
     program: 'Pregrado'
 };
